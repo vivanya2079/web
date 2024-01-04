@@ -1,6 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<style>
+    .logo-carousel-section {
+        background-color: #f8f8f8;
+        padding: 50px 0;
+    }
+
+    .logo-carousel-inner {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        animation: rotate 8s linear infinite;
+    }
+
+    .single-logo-item img {
+        max-width: 80px; /* Set the maximum width as per your preference */
+        height: auto;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .single-logo-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+
+</style>
+
 <div id="offcanvas-mobile-menu" class="offcanvas offcanvas-mobile-menu">
     <button class="offcanvas-close"></button>
     <div class="user-panel">
@@ -145,24 +178,24 @@
         <!-- Hero slider Active -->
         <div class="swiper-wrapper">
             <!-- Single slider item -->
-            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1" data-bg-image="assets/images/hero/bg/hero-bg-2-1.webp">
+            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1" data-bg-image="assets/images/hero/bg/bella3.jpg">
                 <div class="container h-100">
                     <div class="row h-100 flex-row-reverse">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
                             <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
-                                <h2 class="title-1">Easy Your Life <br>
-                                For Smart Device </h2>
-                                <span class="price">
+                                <h2 class="title-1">LUXE <br>
+                                PERFUMES </h2>
+                                <!-- <span class="price">
                                     <span class="mini-title">Only</span>
                                 <span class="amount">$24.00</span>
-                                </span>
+                                </span> -->
                                 
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
                             <div class="show-case">
                                 <div class="hero-slide-image slider-2">
-                                    <img src="{% static 'assets/images/hero/inner-img/hero-2-1.png' %}" alt="" />
+                                    <img src="{% static 'assets/images/hero/inner-img/bella3.jpg' %}" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -170,24 +203,24 @@
                 </div>
             </div>
             <!-- Single slider item -->
-            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1" data-bg-image="{% static 'assets/images/hero/bg/hero-bg-2-1.webp' %}">
+            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1" data-bg-image="{% static 'assets/images/hero/bg/bella3.jpg' %}">
                 <div class="container h-100">
                     <div class="row h-100 flex-row-reverse">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
                             <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
-                                <h2 class="title-1">Easy Your Life <br>
-                                For Smart Device </h2>
-                                <span class="price">
+                                <h2 class="title-1">LUXE <br>
+                                PERFUMES </h2>
+                                <!-- <span class="price">
                                     <span class="mini-title">Only</span>
                                 <span class="amount">$24.00</span>
-                                </span>
+                                </span> -->
                                 
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
                             <div class="show-case">
                                 <div class="hero-slide-image slider-2">
-                                    <img src="{% static 'assets/images/hero/inner-img/hero-2-1.png' %}" alt="" />
+                                    <img src="{% static 'assets/images/hero/inner-img/bella3.jpg' %}" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -205,8 +238,12 @@
     </div>
 </div>
 <!-- Hero/Intro Slider End -->
+<br>
+<br>
+<br>
+<br>
 <!-- Banner Area Start -->
-<div class="banner-area style-two pt-100px pb-100px">
+<!-- <div class="banner-area style-two pt-100px pb-100px">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -231,7 +268,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Banner Area End -->
 <!-- Product Area Start -->
 <div class="product-area pb-100px">
@@ -240,11 +277,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title text-center">
-                    <h2 class="title">New Products</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available</p>
+                    <h2 class="title">NEW PRODUCTS</h2>
+                    <!-- <p>There are many variations of passages of Lorem Ipsum available</p> -->
                 </div>
             </div>
         </div>
+        <br>
         <!-- Section Title & Tab End -->
         <div class="row">
             <div class="col">
@@ -259,7 +297,7 @@
                             </span>
                             <div class="thumb">
                                 <a href="/product/{{prod.id}}" class="image">
-                                    <img src="{{ prod.image.url }}" alt="Product" style="height: 350px; width: 260px;"/>
+                                    <img src="{{ prod.image.url }}" alt="Product" style="height: 280px; width: 270px;"/>
 
                                     <img class="hover-image" src="{{ prod.image.url }}" alt="Product" />
                                 </a>
@@ -293,13 +331,16 @@
     </div>
 </div>
 <!-- Product Area End -->
+<br>
+<br>
 <!-- Banner Area Start -->
-<div class="banner-area style-three pb-100px">
+
+<!-- <div class="banner-area style-three pb-100px">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="single-banner mb-lm-30px">
-                    <img src="{% static 'assets/images/banner/8.webp' %}" alt="">
+                    <img src="{% static 'assets/images/banner/bella_4.jpg' %}" alt="">
                     <div class="banner-content nth-child-3">
                         <h3 class="title">Smart Watch For <br>
                                 Your Hand</h3>
@@ -310,7 +351,7 @@
             </div>
             <div class="col-md-6">
                 <div class="single-banner">
-                    <img src="{% static 'assets/images/banner/9.webp' %}" alt="">
+                    <img src="{% static 'assets/images/banner/bella_3.jpg' %}" alt="">
                     <div class="banner-content nth-child-2">
                         <h3 class="title">Smart Watch For <br>
                                 Your Hand</h3>
@@ -321,10 +362,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Banner Area End -->
 <!-- Feature product area start -->
-<div class="feature-product-area pb-100px">
+<!-- <div class="feature-product-area pb-100px">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -448,7 +489,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Add Arrows -->
             <div class="swiper-buttons">
                 <div class="swiper-button-next"></div>
@@ -459,13 +500,13 @@
 </div>
 <!-- Feature product area End -->
 <!-- Fashion Area Start -->
-<div class="fashion-area" data-bg-image="{% static 'assets/images/fashion/fashion-bg.webp' %}">
+<div class="fashion-area" data-bg-image="{% static 'assets/images/hero/inner-img/Offer1.webp' %}">
     <div class="container h-100">
         <div class="row justify-content-center align-items-center h-100">
-            <div class="col-12 text-center">
+            <!-- <div class="col-12 text-center">
                 <h2 class="title"> <span>Smart Fashion</span> With Smart Devices </h2>
                 <a href="shop-left-sidebar.html" class="btn btn-primary text-capitalize m-auto">Shop All Devices</a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -523,25 +564,25 @@
             <div class="col-md-12">
                 <div class="section-title text-center mb-30px0px">
                     <h2 class="title">Latest Blog</h2>
-                    <p> There are many variations of passages of Lorem Ipsum available</p>
+
                 </div>
             </div>
         </div>
+        <br>
         <!-- section title start -->
         <div class="row">
             <div class="col-lg-6 col-sm-6 mb-xs-30px">
                 <div class="single-blog">
                     <div class="blog-image">
-                        <a href="blog-single-left-sidebar.html"><img src="{% static 'assets/images/blog-image/1.webp' %}" class="img-responsive w-100" alt=""></a>
+                        <a href="blog-single-left-sidebar.html"><img src="{% static 'assets/images/blog-image/bella1.webp' %}" class="img-responsive w-100" alt=""></a>
                     </div>
                     <div class="blog-text">
-                        <div class="blog-athor-date line-height-1">
+                        <!-- <div class="blog-athor-date line-height-1">
                             <span class="blog-date"><i class="fa fa-calendar" aria-hidden="true"></i> 27,Jun 2030</span>
                             <span><a class="blog-author" href="blog-grid.html"><i class="fa fa-user" aria-hidden="true"></i> Wild Nick</a></span>
-                        </div>
-                        <h5 class="blog-heading"><a class="blog-heading-link" href="blog-single-left-sidebar.html">10 Quick Tips About Smart Product</a></h5>
-                        <p>Lorem ipsum dolor sit amet consl adipisi elit, sed do eiusmod templ incididunt ut labore</p>
-                        <a href="blog-single-left-sidebar.html" class="btn btn-primary blog-btn"> Read More</a>
+                        </div> -->
+                        <p>BELLAVITA Hot Mess gives a hot burst of citrus mandarin, the heart of exotic roses and long-lasting passion of musk. It’s the best of floral, fruity and heavy notes, perfect to give you confidence for that hot date!</p>
+                        <!-- <a href="blog-single-left-sidebar.html" class="btn btn-primary blog-btn"> Read More</a> -->
                     </div>
                 </div>
             </div>
@@ -549,16 +590,15 @@
             <div class="col-lg-6 col-sm-6">
                 <div class="single-blog">
                     <div class="blog-image">
-                        <a href="blog-single-left-sidebar.html"><img src="{% static 'assets/images/blog-image/2.webp' %}" class="img-responsive w-100" alt=""></a>
+                        <a href="blog-single-left-sidebar.html"><img src="{% static 'assets/images/blog-image/bella2.jpg' %}" class="img-responsive w-100" alt=""></a>
                     </div>
                     <div class="blog-text">
-                        <div class="blog-athor-date line-height-1">
+                        <!-- <div class="blog-athor-date line-height-1">
                             <span class="blog-date"><i class="fa fa-calendar" aria-hidden="true"></i> 27,Jun 2030</span>
                             <span><a class="blog-author" href="blog-grid.html"><i class="fa fa-user" aria-hidden="true"></i> Oaklee Odom</a></span>
-                        </div>
-                        <h5 class="blog-heading"><a class="blog-heading-link" href="blog-single-left-sidebar.html">5 Real-Life Lessons About Smart Product</a></h5>
-                        <p>Lorem ipsum dolor sit amet consl adipisi elit, sed do eiusmod templ incididunt ut labore</p>
-                        <a href="blog-single-left-sidebar.html" class="btn btn-primary blog-btn"> Read More</a>
+                        </div> -->
+                        <p>Splash into a sea of freshness with Ocean Man. An aquatic fragrance, Ocean opens with the fresh energy of citrus notes. At its heart lies orchid, making you lose yourself to the depth of the Ocean.</p>
+                        <!-- <a href="blog-single-left-sidebar.html" class="btn btn-primary blog-btn"> Read More</a> -->
                     </div>
                 </div>
             </div>
@@ -566,6 +606,35 @@
         </div>
     </div>
 </div>
+
+	<!-- logo carousel -->
+    <div class="logo-carousel-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="logo-carousel-inner">
+                        <div class="single-logo-item">
+                            <img src="{% static 'assets/images/logo/logo1.jpg' %}" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="{% static 'assets/images/logo/logo6.jpg' %}" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="{% static 'assets/images/logo/logo3.jpg' %}" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="{% static 'assets/images/logo/logo7.jpg' %}" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="{% static 'assets/images/logo/logo5.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+	<!-- end logo carousel -->
 
 
 

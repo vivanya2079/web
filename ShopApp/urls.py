@@ -2,6 +2,8 @@ from.import views
 from django.urls import path
 urlpatterns = [
    path('base/',views.base,name='base'),
+   path('about/',views.about,name='about'),
+
    path('',views.index,name='index'),
    path('product/',views.product,name='product'),
    path('search/',views.search,name='search'),
@@ -34,5 +36,12 @@ urlpatterns = [
 
 ###########PALCE ORDER
     path('cart/placeorder/',views.placeorder,name='placeorder'),
+    
+    #######RECEIPT PAGE#######
+    # path('cart/payment-receipt/',views.payment_receipt, name='payment_receipt'),
+    
+    # path('order_complete/',views.order_complete,name='order_complete')
+    path('receipt/',views.receipt, name='receipt'),
+   
  ]
 

@@ -11,7 +11,6 @@ from cart.cart import Cart
 from django.conf import settings
 import razorpay
 from razorpay import Client
-
 client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRECT))
 
 
@@ -271,42 +270,62 @@ def placeorder(request):
     return render(request, 'place.html')
 
 
+##############PAYMENT###############
+# def payment_receipt(request):
+#     # Assuming you have obtained these details from the Razorpay response
+#     razorpay_payment_id = 'pay_NK0ZDsCfnFz7sT'
+   
 
-#####PLACE ORDER
-# def placeorder(request):
-#     if request.method =='POST':
-#         # uid=request.session.get('_auth_user_id')
-#         # user=User.objects.get(id=uid)
-       
-#         firstname=request.POST.get('firstname')
-#         lastname=request.POST.get('lastname')
+#     # Calculate the total amount based on cart items (similar to your existing logic)
+#     total_amount = calculate_total_amount(request.session.cart)
+
+#     context = {
+#         'razorpay_payment_id': razorpay_payment_id,
         
-#         country=request.POST.get('country')
-#         address=request.POST.get('address')
-#         city=request.POST.get('city')
-#         state=request.POST.get('state')
-#         Postcode=request.POST.get('Postcode')
-#         phone=request.POST.get('phone')
-#         email=request.POST.get('email')
-#         amount=request.POST.get('amount')
-#         print(amount)
-       
+#         'total_amount': total_amount,
+#         # Add more context variables as needed
+#     }
 
-#         order_id=request.POST.get('order_id')
-#         payment=request.POST.get('payment')
-#         # order=Order(
-#         #     user=user,
-#         #     firstname=firstname,
-#         #     lastname=lastname,
-#         #     country=country,
-#         #     address=address,
-#         #     city=city,
-#         #     state=state,
-#         #     postcode=postcode,
-#         #     phone=phone,
-#         #     email=email,
-#         #     payment_id=order_id,
-#         #     amount=amount,
-#         # )
-#         # order.save()
-#     return render(request,'place.html')
+#     return render(request, 'payment_receipt.html', context)
+
+# def calculate_total_amount(items):
+#     # Replace this with your actual calculation logic
+#     total = sum(item.get('price', 0) for item in items)
+#     return tota###
+#################ORDER COMPLETE#############
+
+
+
+
+def receipt(request):
+    totalAmount = calculateTotalAmount(request)  # Pass the request object to the function
+    response = get_payment_response()  # Implement this function to get the Razorpay payment response
+
+    context = {
+        'totalAmount': totalAmount,
+        'response': response,
+    }
+
+    return render(request, 'receipt.html', context)
+
+
+def calculateTotalAmount(request):
+    # Ensure that the quantities and prices are converted to integers before performing calculations
+    totalAmount = 0
+    for key, value in request.session.get('cart', {}).items():
+        totalAmount += int(value['price']) * int(value['quantity'])
+    return totalAmount
+
+def get_payment_response():
+    # Implement your logic to get the Razorpay payment response
+    # This can include fetching data from the payment gateway or any other source
+    # For demonstration purposes, a dummy response is returned
+    return {
+        'razorpay_payment_id': 'pay_NK5ME8EEM3yVCF',
+        'razorpay_order_id': 'order_NK57u8SqZbpznn',
+        
+    }
+    
+    
+def about(request):
+    return render(request,'about.html')

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .abt-bg:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        content:"";
+        background-color: #051922;
+        opacity: 0.3;
+    }
+    
+    .abt-section .abt-text {
+        padding: 50px;
+        padding-left: 30px;
+    }
+    
+    .abt-text p {
+        font-size: 8px; /* Adjust the font size to your preference, I changed it to 8px */
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+    
+    .abt-text p.top-sub {
+        opacity: 0.8;
+        margin-bottom: 10px;
+    }
+    
+    .abt-text p:last-child {
+        margin-bottom: 0;
+    }
+</style>
+
+<section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg);">
+                <img src="{% static 'assets/images/hero/inner-img/bella2.jpg' %}" width="1000" height="600"> 
+                    
+                    <span class="icon-play"></span>
+                
+            </div>
+            <div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
+      <div class="heading-section-bold mb-4 mt-md-5">
+          <div class="ml-md-0">
+            <h2 class="mb-4">Who We Are</h2>
+        </div>
+      </div>
+      <div class="pb-md-5">
+        <p>Who doesn’t like to smell awesome and get compliments on their perfume? If you’re like us, obsessed with perfumes and always on-the-go, then we have something for you. BELLAVITA is a fragrance-forward brand that creates world-class luxury perfumes that feel good and smell even better.  Our perfumes are perfect to make you the centre of attention, be it day or night. Our best selling perfumes are infused in our bath and body ranges so that you smell awesome straight from the shower. Made with imported perfume oils from France, Spain and Italy, BELLAVITA is single-mindedly and completely obsessed with making you smell fresh as you power through the day. </p>
+       <br>
+        <h4>What We Want To Achieve</h4>			
+        <p>We want to make luxury perfumes accessible to all at value-driven prices.</p>
+        <br>
+        <h4>Our Promise To You</h4>
+        <h6>IFRA-certified</h6>
+        <p>We make perfumes that are safe to use on your skin so that allergies and reactions are not words in your vocabulary.</p>
+        <h6>Imported Oils</h6>
+        <p>We went out around the world for you, bringing you iconic and luxurious perfumes from France, Spain and Italy.</p>
+        <h6>Long-lasting</h6>
+        <p>All good things come to an end but we try our best to stay put for 6-8 hours so that you can smell fresh all day long.</p>
+        <h6>Cruelty-free</h6>
+        <p>Neither were any furry babies harmed nor will they ever be at BELLAVITA. We love animals and do not test our products on them before dispatching them to you, with love.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
